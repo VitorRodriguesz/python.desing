@@ -1,0 +1,44 @@
+from tkinter import *
+#caixas de mensagens
+from tkinter import messagebox
+def  enviar() -> None:
+    nome=txt_nome.get()
+    messagebox.showinfo('Enviado!com sucesso',
+                       f'ola ,{nome} seja bem vindo')
+#como apagar o texto de um campo
+    txt_nome.delete(0,END)
+# como criar uma janela
+janela=Tk()
+
+
+# como alterar o tamanho da janela
+janela.geometry('580x280')
+
+
+
+# como altera o titulo da janela
+janela.title("infinity school")
+
+# como criar um label
+label_nome=Label(janela,text="nome:",
+                 foreground='blue',
+                 font="tahoma 10 bold"
+                 )
+# adicionando o componente com grid
+label_nome.grid(row=0, column=0)
+# como criar um campo de texto
+txt_nome=Entry(janela,font="tahoma 10",
+               width=25)
+txt_nome.grid(row=0, column=1)
+
+# como criar um button
+btn_enviar=Button(janela, text="enviar",
+                  background="black",
+                  foreground="red",
+                  font="tahoma 12 bold",
+                  width=8,
+                  command=enviar)
+btn_enviar.grid(row=3, column=0)
+# funçao que mantém a janela no S.O
+
+janela.mainloop()
